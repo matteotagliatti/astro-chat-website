@@ -1,16 +1,47 @@
 ---
-
+import Bubble from "../components/Bubble.astro";
+import BubbleContainer from "../components/BubbleContainer.astro";
+import Item from "../components/Item.astro";
+import Link from "../components/Link.astro";
+import Photo from "../components/Photo.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Matteo Tagliatti">
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <p>
+          Hey I'm Matteo! A web developer and designer based in Milan, Italy
+        </p>
+      </Bubble>
+      <Bubble>
+        <p>
+          Currently working as developer and designer at [COMPANY], creating
+          industry software
+        </p>
+      </Bubble>
+      <Bubble>
+        <p>
+          Experiment on my own in my
+          <Link href="https://github.com/matteotagliatti" text="GitHub" />. I
+          also love other stuff
+        </p>
+      </Bubble>
+    </BubbleContainer>
+  </Item>
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble seen={true}>
+        <p>
+          Say hi on <Link
+            href="https://www.instagram.com/matteotagliatti/"
+            text="instagram"
+          />
+        </p>
+      </Bubble>
+    </BubbleContainer>
+  </Item>
+</Layout>

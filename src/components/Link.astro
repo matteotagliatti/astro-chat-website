@@ -1,0 +1,15 @@
+---
+export interface Props {
+  text: string;
+  href: string;
+  blank?: boolean;
+}
+
+const { text, href, blank = true } = Astro.props;
+---
+
+<a
+  href={href}
+  class=`text-white font-medium underline`
+  target={blank ? "_blank" : null}>{text}</a
+>
